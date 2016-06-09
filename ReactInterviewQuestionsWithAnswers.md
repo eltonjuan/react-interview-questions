@@ -5,21 +5,6 @@ This is a collection of general questions about React that can be used when inte
 - Why might you use `react.cloneElement` when building an application?
 - Explain the concept of ownership in React
   - In React, an owner is the component that sets the `props` of other components. More formally, if a component `X` is created in component `Y`'s `render()` method, it is said that `X` is owned by `Y`.
-- Given the following component code, what will happen? 
-
-  ```
-  export default class SomeButton extends React.Component {
-    constructor() {
-
-    }
-
-    componentWillMount() {
-
-    }
-
-  }
-  ```
-
 - How would a parent programatically reference its child components
   - `this.props.children`
 - Can you manipulate `this.props.children`? If so, how? 
@@ -33,7 +18,6 @@ This is a collection of general questions about React that can be used when inte
   - `propTypes` is only checked in development mode
 - Why might you use a mixin? 
   - Sometimes very different components share common functionality. (e.g. setTimeout that taps into lifecycle methods to register and clear timeouts)
-- Sample code about AutoBinding methods
 - When is the `...` (Object Rest Spread) syntax useful?
   - Tranferring props (i.e. `<Component {...this.props} more="values" />`
 - Name two ways you can find a component once it has been mounted to the DOM.
@@ -42,3 +26,7 @@ This is a collection of general questions about React that can be used when inte
   - Should you use `findDOMNode`? No, probably not. 
 - How would you render React components in a server environment? 
   - `ReactDOM.renderToString`
+- When might you use `refs`?
+  - Provide references to backing instances 
+  - Refs are the only practical way of performing DOM measurements
+  - Generally, you shouldn't use `refs` but rely on reactive data flow to make things happen in your application. 
